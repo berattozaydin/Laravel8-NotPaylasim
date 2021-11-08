@@ -1,18 +1,21 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="{{config('app.locale')}}">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title',config('app.name'))</title>
+@include('layouts.partials.head')
+    @yield('head')
 </head>
-<body>
-<a href="/">Anasayfa</a>-
-<a href="/">Dersler</a>-
-<a href="/">Kategori</a>-
-<a href="/">Ders</a>-
-<hr>
+
+<body id="commerce">
+@include('layouts.partials.navbar')
 @yield('content')
-<hr>
-Not Paylaşım
+@include('layouts.partials.footer')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+@yield('footer')
 </body>
+
 </html>
