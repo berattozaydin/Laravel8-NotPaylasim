@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('tile','Laravel Not Paylasim Sitesi')
+@section('title','Laravel Not Paylasim Sitesi')
 @section('description')
     Not Paylaşım Sitesi
 @endsection

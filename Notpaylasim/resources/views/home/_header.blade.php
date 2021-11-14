@@ -1,5 +1,4 @@
-<div class="banner padding-tb-20px background-overlay" style="background-image: url('http://placehold.it/1600x747');">>
-    <div class="container">
+<div class="container">
         <header class="background-main-color">
             <div class="header-output">
                 <div class="header-in">
@@ -61,13 +60,8 @@
         </header>
         <!-- // Header  -->
 
-        <div class="padding-tb-200px z-index-2 position-relative">
-            <h1 class="text-white pull-l icon-large font-weight-500 margin-bottom-40px">+20,000</h1>
-            <h3 class="text-white icon-large font-weight-100">Cooking Recipes</h3>
-            <div class="margin-top-45px">
-                <a href="#" class="btn btn-md border-1 border-radius-0 btn-inline-block text-white padding-lr-25px opacity-hover-7">Browse Now</a>
-            </div>
-        </div>
+
     </div>
+
     <!-- //container  -->
-</div>
+

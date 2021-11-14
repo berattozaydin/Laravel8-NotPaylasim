@@ -5,8 +5,8 @@
     <title> @yield('title') </title>
     <meta name="author" content="Nile-Theme">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="keywords" content="recipes food, recipes , chinese food, italian food">
-    <meta name="description" content="Cook Note - Food & Recipes Food Template">
+    <meta name="keywords" content="@yield('keywords')">
+    <meta name="description" content="@yield('description')">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800%7CPoppins:100,200,300i,300,400,700,400i,500%7CDancing+Script:700" rel="stylesheet">
@@ -34,6 +34,8 @@
 
 <body>
 @include('home._header')
+
+
 
 @section('content')
   içerik alanı
