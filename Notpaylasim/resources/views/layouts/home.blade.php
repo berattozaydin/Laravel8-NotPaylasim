@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{asset('assets')}}/css/elegant_icon.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('assets')}}/css/fontawesome-all.min.css">
+@yield('css')
 
 </head>
 

@@ -32,7 +32,7 @@
 <div class="container body">
     <div class="main_container">
         @include('admin._header')
-        @include('admin._leftsidebar')
+
         @section('content')
             @show
 
