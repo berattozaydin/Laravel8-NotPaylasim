@@ -22,7 +22,7 @@
                             <div class="clearfix"></div>
 
                             <div align="right">
-                                <a href="menu-ekle.php"><button class="btn btn-success btn-xs"> Yeni Ekle</button></a>
+                                <a href="{{route('admin_category_add')}}"><button class="btn btn-success btn-xs"> Yeni Ekle</button></a>
 
                             </div>
                         </div>
@@ -59,25 +59,8 @@
                                     <td>{{$rs->slug}}</td>
                                     <td>{{$rs->status}}</td>
 
-                                    <td>
-                                        <center>
-
-                                            <button class="btn btn-success btn-xs">Aktif</button>
-
-
-
-
-                                            <button class="btn btn-danger btn-xs">Pasif</button>
-
-
-                                        </center>
-
-
-                                    </td>
-
-
                                     <td><center><a href=""><button class="btn btn-primary btn-xs">Düzenle</button></a></center></td>
-                                    <td><center><a href=""><button class="btn btn-danger btn-xs">Sil</button></a></center></td>
+                                    <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure')">Sil</a></td>
                                 </tr>
                                 @endforeach
 
