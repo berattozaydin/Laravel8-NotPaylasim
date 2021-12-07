@@ -30,7 +30,7 @@
                             <li><a href="index.php"><i class="fa fa-home"></i> Anasayfa</a></li>
                             <li><a><i class="fa fa-cogs"></i> Site Ayarları <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="genel-ayar.php">Genel Ayarlar</a></li>
+                                    <li><a href="{{route('admin_category')}}">Kategori</a></li>
                                     <li><a href="iletisim-ayarlar.php">İletişim Ayarları</a></li>
                                     <li><a href="api-ayarlar.php">Api Ayarları</a></li>
                                     <li><a href="sosyal-ayarlar.php">Sosyal Medya Ayarları</a></li>
