@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Kategori Ekleme Sayfası')
+@section('title','Kategori Düzenleme Sayfası')
 @section('description')
 
 @endsection
@@ -14,7 +14,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Kategori Ekleme <small>,
+                            <h2>Kategori Düzenleme <small>,
 
                                 </small></h2>
 
@@ -24,14 +24,14 @@
                             <br />
 
                             <!-- / => en kök dizine çık ... ../ bir üst dizine çık -->
-                            <form action="{{route('admin_category_create')}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                            <form action="{{route('admin_category_update',['id'=>$data->id])}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                                     @csrf
 
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kategori Ad <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="first-name" name="title"  required="required" placeholder="Kategori Ad giriniz" class="form-control col-md-7 col-xs-12">
+                                        <input type="text" id="first-name" name="title" value="{{$data->title}}" required="required" placeholder="Kategori Ad giriniz" class="form-control col-md-7 col-xs-12">
                                     </div>
                                 </div>
 
@@ -44,9 +44,10 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12">
 
                                         <select id="heard" class="form-control" name="parent_id" required>
-                                            <option value="0" selected="selected">Ana Kategori</option>
+
+                                            <option value="0">Ana Kategori</option>
                                                 @foreach($datalist as $rs)
-                                            <option value="{{$rs->id}}">{{$rs->title}}</option>
+                                            <option value="{{$rs->id}}" @if ($rs->id==$data->parent_id)selected="selected" @endif >{{$rs->title}}</option>
                                             @endforeach
 
                                         </select>
@@ -61,7 +62,7 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kategori İçerik <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="first-name" name="keywords"   placeholder="Kategori İçerik giriniz" class="form-control col-md-7 col-xs-12">
+                                        <input type="text" id="first-name" name="keywords"  value="{{$data->keywords}}" placeholder="Kategori İçerik giriniz" class="form-control col-md-7 col-xs-12">
                                     </div>
                                 </div>
 
@@ -69,14 +70,14 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kategori Tanım <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="first-name" name="description"  required="required" placeholder="Kategori Tanım giriniz"  class="form-control col-md-7 col-xs-12">
+                                        <input type="text" id="first-name" name="description" value="{{$data->description}}"  required="required" placeholder="Kategori Tanım giriniz"  class="form-control col-md-7 col-xs-12">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kategori Resim <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="first-name" name="image"  required="required" placeholder="Kategori Resim  Ekleyiniz"  class="form-control col-md-7 col-xs-12">
+                                        <input type="text" id="first-name" name="image" value="{{$data->image}}" required="required" placeholder="Kategori Resim  Ekleyiniz"  class="form-control col-md-7 col-xs-12">
                                     </div>
                                 </div>
 
@@ -84,7 +85,7 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kategori Slug <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="first-name" name="slug"  required="required" placeholder="Kategori Slug giriniz"  class="form-control col-md-7 col-xs-12">
+                                        <input type="text" id="first-name" name="slug" value="{{$data->slug}}"  required="required" placeholder="Kategori Slug giriniz"  class="form-control col-md-7 col-xs-12">
                                     </div>
                                 </div>
 
@@ -95,11 +96,9 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <select id="heard" class="form-control" name="status" required>
 
-                                            <option value="1" >Aktif</option>
-
-
-                                            <option value="0" >Pasif</option>
-
+                                            <option selected="selected" >value="{{$data->status}}"</option>
+                                            <option >True</option>
+                                            <option >False</option>
                                         </select>
                                     </div>
                                 </div>

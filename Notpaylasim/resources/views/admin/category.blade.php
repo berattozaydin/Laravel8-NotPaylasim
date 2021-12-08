@@ -59,8 +59,8 @@
                                     <td>{{$rs->slug}}</td>
                                     <td>{{$rs->status}}</td>
 
-                                    <td><center><a href=""><button class="btn btn-primary btn-xs">Düzenle</button></a></center></td>
-                                    <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure')">Sil</a></td>
+                                    <td><center><a href="{{route('admin_category_edit',['id'=>$rs->id])}}"><button class="btn btn-primary btn-xs">Düzenle</button></a></center></td>
+                                    <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure')"><button class="btn btn-primary btn-xs">Sil</button></a></td>
                                 </tr>
                                 @endforeach
 
