@@ -13,6 +13,20 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $appends = [
+        'getParentsTree'
+    ];
+
+    public static function getParentsTree($category, $title){
+        if($category->parent_id == 0){
+            return $title;
+        }
+        $parent = Category::find($category->parent_id);
+        $title = $parent->title  . '-' .  $title;
+
+        return CategoryController::getParentsTree($parent, $title);
+    }
+
     public function index()
     {
         $datalist = DB::select('select * from categories');

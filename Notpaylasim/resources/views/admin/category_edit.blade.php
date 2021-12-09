@@ -96,7 +96,7 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <select id="heard" class="form-control" name="status" required>
 
-                                            <option selected="selected" >value="{{$data->status}}"</option>
+
                                             <option >True</option>
                                             <option >False</option>
                                         </select>
