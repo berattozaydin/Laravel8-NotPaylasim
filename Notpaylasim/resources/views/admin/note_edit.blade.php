@@ -24,7 +24,7 @@
                             <br />
 
                             <!-- / => en kök dizine çık ... ../ bir üst dizine çık -->
-                            <form action="{{route('admin_note_update',['id'=>$data->id])}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                            <form action="{{route('admin_note_update',['id'=>$data->id])}}" method="POST" id="demo-form2" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
                                     @csrf
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Bölüm Adı <span class="required">*</span>
@@ -80,7 +80,7 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Not Dosyası <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="first-name" name="file"  required="required" placeholder="Not Dosyası giriniz"  class="form-control col-md-7 col-xs-12">
+                                        <input type="file" id="first-name" name="file"  required="required" placeholder="Not Dosyası giriniz"  class="form-control col-md-7 col-xs-12">
                                         @if($data->file)
                                             <a href="{{Storage::url($rs->file)}}"><img src="{{asset('assets')}}/admin/assets/images/pdf.png" height="25"></a>
                                         @endif
@@ -106,10 +106,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Not Detayı <span class="required">*</span>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Not Kullanıcısı <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="number" name="user" value="{{$data->user}}" class="form-control">
+                                <input type="text" name="user" value="{{$data->user->name}}" class="form-control">
                                     </div>
                                 </div>
 

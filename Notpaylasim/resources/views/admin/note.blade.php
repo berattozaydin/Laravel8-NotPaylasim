@@ -38,10 +38,12 @@
                                     <th>Not Ad</th>
                                     <th>Not İçerik</th>
                                     <th>Not Kullanıcı</th>
-                                    <th>Not Image</th>
-                                    <th>Not Image Gallery</th>
-                                    <th>Not File</th>
+                                    <th>Not Resim</th>
+                                    <th>Not Resim Galerisi</th>
+<th></th>
+                                    <th>Not Dosyası(pdf)</th>
                                     <th>Not Durum</th>
+
                                 </tr>
                                 </thead>
 
@@ -54,16 +56,19 @@
                                     <td>{{$rs->category_id}}</td>
 
                                     <td>{{$rs ->title}}</td>
-                                    <td>{{$rs ->user_id}}</td>
+                                    <td>{{$rs ->user->name}}</td>
                                     <td>
                                         @if ($rs->image)
-                                            <img src="{{Storage::url($rs->image)}}" height="30">
+                                            <img src="{{Storage::url($rs->image)}}" height="50">
                                         @endif
                                     </td>
-
+                                    <td><a href="{{route('admin_image_add',['note_id' => $rs->id])}}"
+                                           onclick="return !window.open(this.href,'','top=50 left=100 width=1100, height=700')">
+                                            <img src="{{asset('assets/Admin/assets/images')}}/galleryicon.png" height="25"></a></td>
+                                    <td>
                                     <td>
                                         @if ($rs->file)
-                                            <a href="{{Storage::url($rs->file)}}" target="_blank"><img src="{{asset('assets')}}/admin/assets/images/pdf.png" height="25"></a>
+                                            <a href="{{Storage::url($rs->file)}}" target="_blank"><img src="{{asset('assets/Admin/assets/images')}}/pdf.png" height="25"></a>
                                         @endif
                                     </td>
 
