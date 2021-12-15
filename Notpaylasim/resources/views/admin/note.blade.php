@@ -53,7 +53,7 @@
 
                                 <tr>
                                     <td class="">{{$rs -> id}}</td>
-                                    <td>{{$rs->category_id}}</td>
+                                    <td>{{$rs->category->title}}</td>
 
                                     <td>{{$rs ->title}}</td>
                                     <td>{{$rs ->user->name}}</td>

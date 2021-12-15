@@ -34,7 +34,7 @@
 
                                             @foreach($datalist as $rs)
                                                 <option value="{{$rs -> id}}" @if ($rs->id==$data->parent_id) selected="selected" @endif >
-                                                    {{$rs->id}}
+                                                    {{$rs->title}}
                                                 </option>
                                             @endforeach
 
@@ -69,7 +69,7 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Not Resim <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="first-name" name="image" value="{{$data->image}}" required="required" placeholder="Not Resim  Ekleyiniz"  class="form-control col-md-7 col-xs-12">
+                                        <input type="file" id="first-name" name="image" placeholder="Not Resim  Ekleyiniz"  class="form-control col-md-7 col-xs-12">
                                         @if ($data->image)
                                             <img src="{{Storage::url($data->image)}}" height="30">
                                         @endif
@@ -80,7 +80,7 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Not Dosyası <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="file" id="first-name" name="file"  required="required" placeholder="Not Dosyası giriniz"  class="form-control col-md-7 col-xs-12">
+                                        <input type="file" id="first-name" name="file"  class="form-control col-md-7 col-xs-12">
                                         @if($data->file)
                                             <a href="{{Storage::url($rs->file)}}"><img src="{{asset('assets')}}/admin/assets/images/pdf.png" height="25"></a>
                                         @endif
