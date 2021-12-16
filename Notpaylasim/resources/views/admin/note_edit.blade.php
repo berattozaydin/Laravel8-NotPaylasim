@@ -82,7 +82,7 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input type="file" id="first-name" name="file"  class="form-control col-md-7 col-xs-12">
                                         @if($data->file)
-                                            <a href="{{Storage::url($rs->file)}}"><img src="{{asset('assets')}}/admin/assets/images/pdf.png" height="25"></a>
+                                            <a href="{{Storage::url($rs->file)}}"><img src="{{asset('assets/admin/assets/images/')}}pdf.png" height="25"></a>
                                         @endif
 
                                     </div>

@@ -35,12 +35,8 @@
                                 <thead>
                                 <tr>
                                     <th>Kategori Id</th>
-                                    <th>Kategori Parent Id</th>
-                                    <th>Kategori Ad</th>
-                                    <th>Kategori İçerik</th>
-                                    <th>Kategori Tanım</th>
-                                    <th>Kategori Resim</th>
-                                    <th>Kategori Slug</th>
+                                    <th>Kategori Parent</th>
+                                    <th>Kategori Başlık</th>
                                     <th>Kategori Durum</th>
                                 </tr>
                                 </thead>
@@ -53,10 +49,6 @@
                                     <td width="20">{{$rs->id}} </td>
                                     <td>{{$rs->parent_id}}</td>
                                     <td>{{$rs->title}}</td>
-                                    <td>{{$rs->keywords}}</td>
-                                    <td>{{$rs->description}}</td>
-                                    <td>{{$rs->image}}</td>
-                                    <td>{{$rs->slug}}</td>
                                     <td>{{$rs->status}}</td>
 
                                     <td><center><a href="{{route('admin_category_edit',['id'=>$rs->id])}}"><button class="btn btn-primary btn-xs">Düzenle</button></a></center></td>

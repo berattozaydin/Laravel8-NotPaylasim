@@ -1,11 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Category;
+use App\Models\Faq;
+use App\Models\Image;
+use App\Models\Message;
+use App\Models\Note;
+use App\Models\Setting;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
+    public static function categorylist(){
+        return Category::where('parent_id', '=',1)->with('children')->get();
+    }
+    public static function getsetting(){
+        return Setting::first();
+    }
     public function index(){
     	return view('home.index');
     }

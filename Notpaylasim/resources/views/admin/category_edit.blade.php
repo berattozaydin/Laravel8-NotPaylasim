@@ -73,13 +73,6 @@
                                         <input type="text" id="first-name" name="description" value="{{$data->description}}"  required="required" placeholder="Kategori Tanım giriniz"  class="form-control col-md-7 col-xs-12">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kategori Resim <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="first-name" name="image" value="{{$data->image}}" required="required" placeholder="Kategori Resim  Ekleyiniz"  class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kategori Slug <span class="required">*</span>
