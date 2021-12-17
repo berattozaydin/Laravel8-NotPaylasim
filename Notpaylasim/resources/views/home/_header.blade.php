@@ -1,5 +1,6 @@
 @php
-$parentCategories = \App\Http\Controllers\HomeController::categorylist()
+$parentCategories = \App\Http\Controllers\HomeController::categorylist();
+$setting = \App\Http\Controllers\HomeController::getsetting()
 @endphp
 <div class="container">
         <header class="background-main-color">
@@ -10,7 +11,7 @@ $parentCategories = \App\Http\Controllers\HomeController::categorylist()
 
 
                         <div class="col-lg-3 col-md-12 padding-left-30px">
-                            <a id="logo" href="index.html" class="d-inline-block margin-tb-10px"><img src="assets/img/logo-1.png" alt=""></a>
+                            <a id="logo" href="{{route('home')}}" class="d-inline-block margin-tb-10px"><img src="assets/img/logo-1.png" alt=""></a>
                             <a class="mobile-toggle padding-13px background-main-color" href="#"><i class="fas fa-bars"></i></a>
                         </div>
                         <div class="col-lg-7 col-md-12 position-inherit">
@@ -32,18 +33,34 @@ $parentCategories = \App\Http\Controllers\HomeController::categorylist()
                                             </div>--}}
                                             </li>
                                         @endforeach
-
+                                    </ul>
                                 </li>
 
-                                    </ul>
+
                                 <li><a href="#">Conact Us</a> </li>
 
                             </ul>
                         </div>
+                        @auth
                         <div class="col-lg-2 col-md-12 d-none d-lg-block">
                             <hr class="margin-bottom-0px d-block d-sm-none">
-                            <a href="page-login.html" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i></a>
+                            <a href="" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i>{{Auth::user()->name}}</a>
+                            <ul>
+                                <li><a href="{{route('logout')}}">Çıkış Yap</a></li>
+                            </ul>
                         </div>
+                        @endauth
+                        @guest
+                            <div class="col-lg-2 col-md-12 d-none d-lg-block">
+                                <hr class="margin-bottom-0px d-block d-sm-none">
+                                <a href="/login" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i>Giriş Yap</a>
+                            </div>
+                                <div class="col-lg-2 col-md-12 d-none d-lg-block">
+                                    <hr class="margin-bottom-0px d-block d-sm-none">
+                                <a href="/register" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i>Kayıt Ol</a>
+                            </div>
+                        @endguest
+
                     </div>
 
                 </div>

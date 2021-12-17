@@ -1,3 +1,6 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
 <footer class="padding-top-100px padding-bottom-70px background-dark">
     <div class="container">
         <div class="row">

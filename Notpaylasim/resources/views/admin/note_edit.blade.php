@@ -30,14 +30,12 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Bölüm Adı <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <select id="heard" class="form-control" name="category_id" required>
-
+                                        <select class="form-control" name="category_id">
                                             @foreach($datalist as $rs)
-                                                <option value="{{$rs -> id}}" @if ($rs->id==$data->parent_id) selected="selected" @endif >
-                                                    {{$rs->title}}
+                                                <option value="{{$rs -> id}}" @if ($rs->id==$data->parent_id) @endif >
+                                                    {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}
                                                 </option>
                                             @endforeach
-
                                         </select>
                                     </div>
                                 </div>

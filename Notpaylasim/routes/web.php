@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 /*
@@ -16,23 +17,22 @@ use App\Http\Controllers\HomeController;
 Route::get('/home2', function () {
     return view('welcome');
 });
-Route::get('/',function(){return view('home.index');});
+Route::get('/',[HomeController::class,'index'])->name('home');
+
 Route::get('/page-about',function(){return view('home.page-about');});
 
 Route::get('/page-login',function(){return view('home.page-login');});
 Route::post('/page-login',[HomeController::class,'home_logincheck'])->name('home_logincheck');
 
-
-
 Route::get('/home',[HomeController::class,'index']);
+
 
 //Admin
 Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('adminhome')->middleware('auth');
 Route::get('/users',[\App\Http\Controllers\Admin\HomeController::class,'users'])->name('usershome');
 Route::get('/admin/login',[HomeController::class,'login'])->name('adminlogin');
 Route::post('/admin/login',[HomeController::class,'logincheck'])->name('admin_logincheck');
-
-Route::get('/admin/logout',[HomeController::class,'logout'])->name('admin_logout');
+Route::get('/logout',[HomeController::class,'logout'])->name('admin_logout');
 
 Route::middleware('auth')->prefix('admin')->group(function(){
 
@@ -76,6 +76,12 @@ Route::middleware('auth')->prefix('admin')->group(function(){
 
 });
 
+#User
+Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
+    Route::get('/',[UserController::class, 'index'])->name('profile');
+
+
+});
 
 
 

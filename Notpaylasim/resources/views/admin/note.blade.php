@@ -53,7 +53,7 @@
 
                                 <tr>
                                     <td class="">{{$rs -> id}}</td>
-                                    <td>{{$rs->category->title}}</td>
+                                    <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</td>
 
                                     <td>{{$rs ->title}}</td>
                                     <td>{{$rs ->user->name}}</td>
@@ -64,11 +64,11 @@
                                     </td>
                                     <td><a href="{{route('admin_image_add',['note_id' => $rs->id])}}"
                                            onclick="return !window.open(this.href,'','top=50 left=100 width=1100, height=700')">
-                                            <img src="{{asset('assets/Admin/assets/images')}}/galleryicon.png" height="25"></a></td>
+                                            <img src="{{asset('assets')}}/Admin/images/galleryicon.png" height="25"></a></td>
                                     <td>
                                     <td>
                                         @if ($rs->file)
-                                            <a href="{{Storage::url($rs->file)}}" target="_blank"><img src="{{asset('assets/Admin/assets/images')}}/pdf.png" height="25"></a>
+                                            <a href="{{Storage::url($rs->file)}}" target="_blank"><img src="{{asset('assets')}}/Admin/images/pdf.png" height="25"></a>
                                         @endif
                                     </td>
 

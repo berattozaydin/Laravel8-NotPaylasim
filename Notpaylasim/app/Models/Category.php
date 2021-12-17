@@ -9,10 +9,6 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $appends = [
-        'parent',
-    ];
-
     #one to many
     public function notes(){
         return $this->hasMany(Notes::class);

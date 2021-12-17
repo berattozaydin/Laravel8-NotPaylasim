@@ -25,30 +25,32 @@
 
                             <!-- / => en kök dizine çık ... ../ bir üst dizine çık -->
                             <form action="{{route('admin_note_store')}}" method="POST" id="demo-form2" data-parsley-validate enctype="multipart/form-data" class="form-horizontal form-label-left">
-                                    @csrf
+                                @csrf
 
-                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Bölüm Adı <span class="required">*</span>
                                     </label>
-                                    <select id="heard" class="form-control" name="category_id">
-                                        @foreach($datalist as $rs)
-                                            <option value="{{$rs -> id}}">{{$rs->title}}</option>
-                                        @endforeach
-                                    </select>
-                                </div><br>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <select id="heard" class="form-control" name="category_id">
+                                            @foreach($datalist as $rs)
+                                                <option value="{{$rs -> id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
 
-                                <!-- Ck Editör Başlangıç -->
+
 
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ders Adı <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="first-name" name="title"   placeholder="Not İçerik giriniz" class="form-control col-md-7 col-xs-12">
+                                        <input type="text" id="first-name" name="title"  placeholder="Not İçerik giriniz" class="form-control col-md-7 col-xs-12">
                                     </div>
                                 </div>
 
 
-                                <!-- Ck Editör Bitiş -->
+
 
 
                                 <div class="form-group">
@@ -84,10 +86,10 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Not Detay Girin<span class="required">*</span>
                                     </label>
-                                <textarea id="detail" name="detail"></textarea>
-                                <script>
-                                    CKEDITOR.replace( 'detail' );
-                                </script>
+                                    <textarea id="detail" name="detail"></textarea>
+                                    <script>
+                                        CKEDITOR.replace( 'detail' );
+                                    </script>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Not Kullanıcısı <span class="required">*</span>

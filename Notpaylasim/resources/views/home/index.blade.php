@@ -1,8 +1,10 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
 @extends('layouts.home')
-@section('title','Laravel Not Paylasim Sitesi')
-@section('description')
-    Not Paylaşım Sitesi
-@endsection
+@section('title',$setting->title)
+@section('description') {{$setting->description}} @endsection
+@section('keywords',$setting->keywords)
 @section('content')
     @include('home._slider')
     <section class="padding-tb-100px">
