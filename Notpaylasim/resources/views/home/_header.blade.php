@@ -18,7 +18,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                             <ul id="menu-main" class="white-link dropdown-dark text-lg-center nav-menu link-padding-tb-24px">
                                 <li class="has-dropdown"><a href="/">Home</a> </li>
                                 <li class="has-dropdown"><a href="#">Kategoriler</a>
-                                    <ul class="dropdown-menu" role="menu">
+                                    <ul class="sub-menu text-left">
                                         @foreach($parentCategories as $rs)
                                             <li class="dropdown side-dropdown">
                                                 <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">{{$rs->title}}<i class="fa fa-angle-right"></i> </a>
@@ -37,14 +37,17 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                                 </li>
 
 
-                                <li><a href="#">Conact Us</a> </li>
 
+                                <li><a href="#">Conact Us</a> </li>
+                                @guest
+                                <a href="/register" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i>Kayıt Ol</a>
+                                @endguest
                             </ul>
                         </div>
                         @auth
                         <div class="col-lg-2 col-md-12 d-none d-lg-block">
                             <hr class="margin-bottom-0px d-block d-sm-none">
-                            <a href="" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i>{{Auth::user()->name}}</a>
+                            <a href="{{route('myprofile')}}" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i>{{Auth::user()->name}}</a>
                             <ul>
                                 <li><a href="{{route('logout')}}">Çıkış Yap</a></li>
                             </ul>
@@ -55,10 +58,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                                 <hr class="margin-bottom-0px d-block d-sm-none">
                                 <a href="/login" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i>Giriş Yap</a>
                             </div>
-                                <div class="col-lg-2 col-md-12 d-none d-lg-block">
-                                    <hr class="margin-bottom-0px d-block d-sm-none">
-                                <a href="/register" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i>Kayıt Ol</a>
-                            </div>
+
                         @endguest
 
                     </div>

@@ -78,7 +78,8 @@ Route::middleware('auth')->prefix('admin')->group(function(){
 
 #User
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
-    Route::get('/',[UserController::class, 'index'])->name('profile');
+    Route::get('/',[UserController::class, 'index'])->name('myprofile');
+
 
 
 });

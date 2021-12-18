@@ -3,7 +3,7 @@
 @section('description')  @endsection
 @section('keywords','keywords')
 @section('content')
-    <div id="page-title" class="padding-tb-30px gradient-white text-center">
+   <!-- <div id="page-title" class="padding-tb-30px gradient-white text-center">
         <div class="container">
             <ol class="breadcrumb opacity-5">
                 <li><a href="#">Anasayfa</a></li>
@@ -12,19 +12,42 @@
             <h1 class="font-weight-300">Login Page</h1>
         </div>
     </div>
-    <div class="container margin-bottom-100px">
-        <!--======= log_in_page =======-->
-        <div id="log-in" class="site-form log-in-form box-shadow border-radius-10">
+    <br>-->
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+    <div class="container margin-bottom-80px">
+        <div class="widget widget_categories">
+            <div class="margin-bottom-30px">
+                <h4 class="padding-lr-30px padding-tb-20px background-white box-shadow border-radius-10"><i class="far fa-folder-open margin-right-10px text-main-color"></i> Kullanıcı Paneli</h4>
+                <div class="padding-30px padding-bottom-30px background-white border-radius-10">
+                    <ul>
+                        <li><a href="{{route('myprofile')}}">Profil</a></li>
+                        <li><a href="#">Paylaştıklarım</a></li>
+                        <li><a href="#">Beğendiğim Notlar</a></li>
+                        <li><a href="{{route('logout')}}">Çıkış</a></li>
 
-            <div class="form-output">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--======= log_in_page =======-->
+        <div id="log-in" class="row">
+
+                @include('profile.show')
+
+           <!-- <div class="form-output">
                 <form>
                     <div class="form-group label-floating">
-                        <label class="control-label">Your Email</label>
-                        <input class="form-control" placeholder="" type="email">
+                        <label class="control-label">Email Adresi</label>
+                        <input class="form-control" placeholder="" type="email" value="">
                     </div>
                     <div class="form-group label-floating">
-                        <label class="control-label">Your Password</label>
-                        <input class="form-control" placeholder="" type="password">
+                        <label class="control-label">Şifre</label>
+                        <input class="form-control" placeholder="" type="password" value="">
                     </div>
 
                     <div class="remember">
@@ -48,9 +71,14 @@
 
                     <p>Don't you have an account? <a href="page-sign-up.html">Register Now!</a> </p>
                 </form>
-            </div>
+
+            </div>--->
+
         </div>
         <!--======= // log_in_page =======-->
+
+
+
 
     </div>
 @endsection
