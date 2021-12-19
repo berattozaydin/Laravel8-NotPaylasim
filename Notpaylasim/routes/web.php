@@ -80,9 +80,9 @@ Route::middleware('auth')->prefix('admin')->group(function(){
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function(){
     Route::get('/',[\App\Http\Controllers\UserController::class,'index'])->name('myprofile');
 });
-
-
-
+Route::get('/contactus',[\App\Http\Controllers\HomeController::class,'contactus'])->name('contactus');
+Route::get('/aboutus',[\App\Http\Controllers\HomeController::class,'aboutus'])->name('aboutus');
+Route::get('/reference',[\App\Http\Controllers\HomeController::class,'references'])->name('references');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view(route('myprofile'));
 })->name('dashboard');

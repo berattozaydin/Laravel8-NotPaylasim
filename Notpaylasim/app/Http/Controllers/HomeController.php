@@ -15,9 +15,14 @@ class HomeController extends Controller
         return Category::where('parent_id', '=', 0)->with('children')->get();
     }
     public function aboutus(){
+        $setting = Setting::first();
 
+        return view('home.page-about',['setting'=>$setting]);
+    }
+    public function references(){
+        $setting = Setting::first();
 
-        return view('home.page-about');
+        return view('home.page-reference',['setting'=>$setting]);
     }
     public function contactus(){
 

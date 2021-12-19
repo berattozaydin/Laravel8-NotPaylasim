@@ -38,7 +38,9 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
 
 
 
-                                <li><a href="#">Conact Us</a> </li>
+                                <li><a href="{{route('contactus')}}">Conact Us</a> </li>
+                                <li><a href="{{route('aboutus')}}">About Us</a> </li>
+                                <li><a href="{{route('references')}}">References</a> </li>
                                 @guest
                                 <a href="/register" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i>Kayıt Ol</a>
                                 @endguest
