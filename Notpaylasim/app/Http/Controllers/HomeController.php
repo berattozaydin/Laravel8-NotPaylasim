@@ -10,6 +10,7 @@ use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use MongoDB\Driver\Session;
+use phpDocumentor\Reflection\Types\Context;
 
 class HomeController extends Controller
 {
@@ -48,10 +49,21 @@ class HomeController extends Controller
     public static function getsetting(){
         return Setting::first();
     }
+    public function notess($id){
+        $data=Notes::find($id);
+        //print_r($data);
+       // exit();
+    }
     public function index(){
         $setting = Setting::first();
+        $slider= Notes::select('id','title','image')->limit(4)->get();
+//print_r($slider);
+//exit();
+        $data=['setting'=>$setting,
+            'slider'=>$slider
+            ];
 
-    	return view('home.index',['setting'=>$setting]);
+    	return view('home.index',$data);
     }
     public function login(){
         return view('admin.login');
