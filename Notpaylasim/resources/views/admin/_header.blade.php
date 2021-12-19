@@ -38,6 +38,7 @@
                             </li>
 
                             <li><a href="/users"><i class="fa fa-user"></i> Kullanıcılar</a></li>
+                            <li><a href="{{route('admin_message')}}"><i class="fa fa-user"></i>Contact Mesajları</a></li>
                          <!--   <li><a href="menu.php"><i class="fa fa-list"></i> Menüler</a></li>
                             <li><a href="slider.php"><i class="fa fa-image"></i> Slider</a></li>-->
 

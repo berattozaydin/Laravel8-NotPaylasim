@@ -73,6 +73,16 @@ Route::middleware('auth')->prefix('admin')->group(function(){
     Route::get('setting', [\App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
     Route::post('setting/update', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
 
+    #Message
+    Route::prefix('messages')->group(function(){
+
+        Route::get('/', [\App\Http\Controllers\Admin\MessageController::class, 'index'])->name('admin_message');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'edit'])->name('admin_message_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'update'])->name('admin_message_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_message_show');
+
+    });
 
 });
 
@@ -83,6 +93,7 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 Route::get('/contactus',[\App\Http\Controllers\HomeController::class,'contactus'])->name('contactus');
 Route::get('/aboutus',[\App\Http\Controllers\HomeController::class,'aboutus'])->name('aboutus');
 Route::get('/reference',[\App\Http\Controllers\HomeController::class,'references'])->name('references');
+Route::post('/sendmessage',[\App\Http\Controllers\HomeController::class,'sendmessage'])->name('sendmessage');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view(route('myprofile'));
 })->name('dashboard');

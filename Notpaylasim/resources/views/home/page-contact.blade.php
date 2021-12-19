@@ -52,11 +52,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <form>
+                    @include('home.message')
+                    <form action="{{route('sendmessage')}}" method="post">
+                        @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputName">Full Name</label>
-                                <input type="text" class="form-control" id="inputName" name="name" placeholder="Name">
+                                <input type="text" class="form-control" id="inputName" name="name" placeholder="Name & Surname">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email</label>
@@ -65,13 +67,13 @@
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" name="inputaddress" placeholder="1234 Main St">
+                            <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Message</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
                         </div>
-                        <a href="#" class="btn-sm btn-lg btn-block background-main-color text-white text-center font-weight-bold text-uppercase rounded-0 padding-15px">Send</a>
+                       <button type="submit"><a class="btn-sm btn-lg btn-block background-main-color text-white text-center font-weight-bold text-uppercase rounded-0 padding-15px">Send</a></button>
                     </form>
                 </div>
                 <div class="col-lg-6 col-md-6">

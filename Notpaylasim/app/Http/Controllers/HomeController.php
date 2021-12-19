@@ -9,6 +9,8 @@ use App\Models\Notes;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use MongoDB\Driver\Session;
+
 class HomeController extends Controller
 {
     public static function categorylist(){
@@ -28,6 +30,19 @@ class HomeController extends Controller
 
 
         return view('home.page-contact');
+    }
+    public function sendmessage(Request $request){
+
+        $data = new Message;
+        $data->name=$request->input('name');
+        $data->email=$request->input('email');
+        $data->address=$request->input('address');
+        $data->message=$request->input('message');
+
+
+        $data->save();
+
+        return redirect()->route('contactus')->with('success','Mesajınız Gönderilmiştir');
     }
 
     public static function getsetting(){
