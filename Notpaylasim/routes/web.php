@@ -24,6 +24,7 @@ Route::get('/page-about',function(){return view('home.page-about');});
 Route::get('/page-login',function(){return view('home.page-login');});
 Route::post('/page-login',[HomeController::class,'home_logincheck'])->name('home_logincheck');
 Route::get('/notes/{id}',[HomeController::class,'notess'])->name('note');
+Route::get('/categorynotes/{id}',[HomeController::class,'categorynotess'])->name('categorynotes');
 Route::get('/home',[HomeController::class,'index']);
 
 

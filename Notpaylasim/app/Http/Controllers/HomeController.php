@@ -49,10 +49,20 @@ class HomeController extends Controller
     public static function getsetting(){
         return Setting::first();
     }
+    public static function getnotes(){
+        return Notes::first();
+    }
     public function notess($id){
         $data=Notes::find($id);
         //print_r($data);
        // exit();
+    }
+    public function categorynotess($id){
+       $datalist=Notes::where('category_id',$id)->get();
+        $data=Category::find($id);
+       return view('home.category_notes',['datalist'=>$datalist,'data'=>$data]);
+        //print_r($data);
+        //exit();
     }
     public function index(){
         $setting = Setting::first();
