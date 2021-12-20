@@ -54,6 +54,8 @@ class HomeController extends Controller
     }
     public function notess($id){
         $data=Notes::find($id);
+        $datalist=Image::where('note_id',$id)->get();
+        return view('home.notes_detail',['data'=>$data,'datalist'=>$datalist]);
         //print_r($data);
        // exit();
     }

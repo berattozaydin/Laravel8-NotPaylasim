@@ -41,12 +41,13 @@
 
 
     <div class="background-light-grey">
+        <h3 style="text-align: center;">Son Eklenen Notlar</h3>
         <div class="container padding-top-100px">
             <div class="row">
                 @foreach($slider as $rs)
                 <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
                     <a href="{{route('note',['id' => $rs->id])}}" class="d-block box-shadow background-main-color text-white hvr-float">
-                       <div class="thum"><img style="width: 450px;height: 250px" src="{{Storage::url($rs->image)}}" alt=""></div>
+                       <div class="thum"><img style="width: 450px;height: 250px" src="{{Storage::url($rs->image)}}" alt="{{$rs->title}}"></div>
                         <h4 class="text-center padding-15px">{{$rs->title}}</h4>
                     </a>
                 </div>
