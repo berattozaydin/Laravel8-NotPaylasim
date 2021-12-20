@@ -26,6 +26,7 @@ Route::post('/page-login',[HomeController::class,'home_logincheck'])->name('home
 Route::get('/notes/{id}',[HomeController::class,'notess'])->name('note');
 Route::get('/categorynotes/{id}',[HomeController::class,'categorynotess'])->name('categorynotes');
 Route::get('/home',[HomeController::class,'index']);
+Route::post('/getnotes',[HomeController::class,'getnotes'])->name('getnotes');
 
 
 //Admin

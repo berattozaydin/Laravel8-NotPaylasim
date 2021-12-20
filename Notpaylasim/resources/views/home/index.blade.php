@@ -18,16 +18,14 @@
                     <div class="row justify-content-center margin-tb-60px">
                         <div class="col-lg-8">
                             <div class="listing-search">
-                                <form class="row no-gutters">
+                                <form class="row no-gutters" action="{{route('getnotes')}}" method="post">
+                                    @csrf
+                                  @livewire('search')
                                     <div class="col-md-4">
-                                        <div class="keywords">
-                                            <input class="listing-form first" type="text" placeholder="Keywords..." value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a class="listing-bottom background-second-color box-shadow" href="#">Search Now</a>
+                                        <button type="submit">  <a class="listing-bottom background-second-color box-shadow"> Arama Yap</a></button>
                                     </div>
                                 </form>
+                                @livewireScripts
                             </div>
                         </div>
                     </div>

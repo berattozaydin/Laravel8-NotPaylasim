@@ -14,6 +14,10 @@ use phpDocumentor\Reflection\Types\Context;
 
 class HomeController extends Controller
 {
+    public function getnotes(Request $request){
+        $data = Notes::where('title',$request->input('search'))->first();
+        return redirect()->route('note',['id'=>$data->id,'slug'=>$data->slug]);
+    }
     public static function categorylist(){
         return Category::where('parent_id', '=', 0)->with('children')->get();
     }
@@ -48,9 +52,6 @@ class HomeController extends Controller
 
     public static function getsetting(){
         return Setting::first();
-    }
-    public static function getnotes(){
-        return Notes::first();
     }
     public function notess($id){
         $data=Notes::find($id);
