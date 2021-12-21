@@ -52,7 +52,9 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                             <hr class="margin-bottom-0px d-block d-sm-none">
                             <a href="{{route('myprofile')}}" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i>{{Auth::user()->name}}</a>
                             <ul>
+                                <li>{{Auth::user()->roles->pluck('name')}}</li>
                                 <li><a href="{{route('logout')}}">Çıkış Yap</a></li>
+
                             </ul>
                         </div>
                         @endauth

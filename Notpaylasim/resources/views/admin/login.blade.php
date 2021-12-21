@@ -32,6 +32,7 @@
 <div class="limiter">
     <div class="container-login100" style="background-image: url('{{asset('assets')}}/Admin/images/bg-01.jpg');">
         <div class="wrap-login100">
+            @include('home.message')
             <form class="login100-form validate-form" action="{{route('admin_logincheck')}}" method="POST">
                 @csrf
           <span class="login100-form-logo">
