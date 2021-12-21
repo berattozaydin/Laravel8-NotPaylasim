@@ -27,7 +27,7 @@
                     <ul>
                         <li><a href="{{route('myprofile')}}">Profil</a></li>
                         <li><a href="#">Paylaştıklarım</a></li>
-                        <li><a href="#">Beğendiğim Notlar</a></li>
+                        <li><a href="{{route('myreviews')}}">Yorum Yapıtığım Notlar</a></li>
                         <li><a href="{{route('logout')}}">Çıkış</a></li>
 
                     </ul>
