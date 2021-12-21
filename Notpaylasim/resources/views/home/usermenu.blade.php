@@ -4,7 +4,7 @@
         <div class="padding-30px padding-bottom-30px background-white border-radius-10">
             <ul>
                 <li><a href="{{route('myprofile')}}">Profil</a></li>
-                <li><a href="#">Paylaştıklarım</a></li>
+                <li><a href="{{route('user_note')}}">Paylaştıklarım</a></li>
                 <li><a href="{{route('myreviews')}}">Yorum Yapıtığım Notlar</a></li>
                 <li><a href="{{route('logout')}}">Çıkış</a></li>
 

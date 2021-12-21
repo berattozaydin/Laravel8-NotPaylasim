@@ -17,7 +17,7 @@
             <div class="col-lg-6 margin-bottom-30px">
                 <div class="background-white thum-hover box-shadow hvr-float full-width">
                     <a class="float-md-left margin-right-30px thum-xs">
-                        <a href="{{route('note',['id' => $rs->id])}}"><img class="width-250px" src="{{Storage::url($rs->image)}}" alt=""></a>
+                        <a href="{{route('note',['id' => $rs->id])}}"><img class="width-250px" src="{{Storage::url($rs->image)}}" ></a></a>
                     </div>
                     <div class="padding-25px">
                         <div class="rating">

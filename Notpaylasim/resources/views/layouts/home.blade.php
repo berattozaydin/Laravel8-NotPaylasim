@@ -15,6 +15,7 @@
     <!-- owl Carousel assets -->
     <link href="assets/css/owl.carousel.css" rel="stylesheet">
     <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap.min.css">
     <!-- hover anmation -->
