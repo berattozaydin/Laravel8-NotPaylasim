@@ -18,6 +18,7 @@
                 <ul class="footer-menu-2 row margin-0px padding-0px list-unstyled">
                     <li class="col-6  padding-tb-5px"><a href="{{route('home')}}" class="text-grey-2">Home</a></li>
                     <li class="col-6  padding-tb-5px"><a href="{{route('contactus')}}" class="text-grey-2">Contact Us</a></li>
+                    <li class="col-6  padding-tb-5px"><a href="{{route('faq')}}" class="text-grey-2">SSS</a></li>
                 </ul>
             </div>
 

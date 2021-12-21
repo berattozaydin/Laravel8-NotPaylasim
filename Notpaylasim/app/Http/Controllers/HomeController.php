@@ -36,6 +36,11 @@ class HomeController extends Controller
 
         return view('home.page-contact');
     }
+    public function faq(){
+        $datalist = Faq::all()->sortBy('position');
+
+        return View ('home.faq',['datalist'=>$datalist]);
+    }
     public function sendmessage(Request $request){
 
         $data = new Message;
@@ -53,6 +58,8 @@ class HomeController extends Controller
     public static function getsetting(){
         return Setting::first();
     }
+
+
     public function notess($id){
         $data=Notes::find($id);
         $datalist=Image::where('note_id',$id)->get();
