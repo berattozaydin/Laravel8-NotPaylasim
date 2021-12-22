@@ -53,7 +53,7 @@
 
                                 <tr>
                                     <td class="">{{$rs -> id}}</td>
-                                    <td>{{$rs->user->name}}</td>
+                                    <td><a href="{{route('admin_user_show',['id'=>$rs->user->id])}}">{{$rs->user->name}}</a></td>
                                     <td><a href="{{route('note',['id'=>$rs->note->id,'slug'=>$rs->note->slug])}}">{{$rs->note->title}}</a></td>
                                     <td>{{$rs ->subject}}</td>
                                     <td>{{$rs->review}}</td>

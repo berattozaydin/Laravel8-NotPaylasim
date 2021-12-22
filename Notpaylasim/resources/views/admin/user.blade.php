@@ -13,7 +13,7 @@
                             <div class="x_title">
                                 <h2>Kullanıcı Listeleme <small>
 
-                                      
+
 
 
 
@@ -43,12 +43,14 @@
                                 <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                                     <thead>
                                     <tr>
-                                        <th>Kayıt Tarih</th>
-                                        <th>Ad Soyad</th>
-                                        <th>Mail Adresi</th>
-                                        <th>Telefon</th>
-                                        <th></th>
-                                        <th></th>
+                                        <th rowspan="1" colspan="1">Id</th>
+                                        <th rowspan="1" colspan="1">Fotoğrafı</th>
+                                        <th rowspan="1" colspan="1">İsim</th>
+                                        <th rowspan="1" colspan="1">Email</th>
+                                        <th rowspan="1" colspan="1">Telefon</th>
+                                        <th rowspan="1" colspan="1">Rolleri</th>
+                                        <th rowspan="1" colspan="1">Düzenle</th>
+                                        <th rowspan="1" colspan="1">Sil</th>
                                     </tr>
                                     </thead>
 
@@ -56,16 +58,27 @@
 
 
 
-
+                                    @foreach($datalist as $rs)
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td><center><a href="kullanici-duzenle.php?kullanici_id="><button class="btn btn-primary btn-xs">Düzenle</button></a></center></td>
-                                        <!--<td><center><a href="../netting/islem.php?kullanici_id=&kullanicisil=ok"><button class="btn btn-danger btn-xs">Sil</button></a></center></td>-->
+                                        <td class="sorting_1">{{$rs -> id}}</td>
+                                        <td>
+                                            @if($rs->profile_photo_path)
+                                                <img src="{{Storage::url($rs->profile_photo_path)}}" height="50" style="border-radius: 10px" alt="">
+                                            @endif
+                                        </td>
+                                        <td class="sorting_1">{{$rs ->name}}</td>
+                                        <td class="sorting_1">{{$rs -> email}}</td>
+                                        <td class=" ">{{$rs -> phone}}</td>
+                                        <td>
+                                            @foreach($rs->roles as $row)
+                                                {{ $row-> name }},
+                                            @endforeach
+                                            <a href="{{route('admin_user_roles',['id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100, height=700')"><img src="{{asset('assets')}}/admin/images/plus.png" height="20"></a>
+                                        </td>
+                                        <td class="center "><a href="{{route('admin_user_edit',['id' => $rs->id])}}"><button class="btn btn-primary btn-xs">Düzenle</button></a></td>
+                                        <td class="center "><a href="{{route('admin_user_delete',['id' => $rs->id])}}" onclick="return confirm('Are you sure?')"><button class="btn btn-primary btn-xs">Sil</button></a></td>
                                     </tr>
-
+                                    @endforeach
 
 
 

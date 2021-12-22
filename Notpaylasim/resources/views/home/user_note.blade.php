@@ -18,7 +18,7 @@
     </div>
     <div class="margin-tb-30px">
         <div class="card-header">
-            <a class="btn btn-block btn-info" type="button" style="width:200px" href="{{route('user_note_add')}}">Add Note</a>
+            <a type="button" style="width:200px" href="{{route('user_note_add')}}"><button class="btn btn-success btn-xs"> Yeni Ekle</button></a>
             @include('home.message')
         </div>
         <div class="panel-body">
@@ -27,15 +27,15 @@
                     <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
                         <thead>
                         <tr>
-                            <th rowspan="1" colspan="1">Faculty-Department</th>
-                            <th rowspan="1" colspan="1">Lesson</th>
-                            <th rowspan="1" colspan="1">User</th>
-                            <th rowspan="1" colspan="1">Status</th>
-                            <th rowspan="1" colspan="1">Image</th>
-                            <th rowspan="1" colspan="1">Image Gallery</th>
-                            <th rowspan="1" colspan="1">File(pdf)</th>
-                            <th rowspan="1" colspan="1">Edit</th>
-                            <th rowspan="1" colspan="1">Delete</th></tr>
+                            <th rowspan="1" colspan="1">Departmanı</th>
+                            <th rowspan="1" colspan="1">Ders</th>
+                            <th rowspan="1" colspan="1">Kullanıcı</th>
+                            <th rowspan="1" colspan="1">Durum</th>
+                            <th rowspan="1" colspan="1">Fotoğrafı</th>
+                            <th rowspan="1" colspan="1">Resim Galerisi</th>
+                            <th rowspan="1" colspan="1">PDF Dosyası</th>
+                            <th rowspan="1" colspan="1">Düzenle</th>
+                            <th rowspan="1" colspan="1">Sil</th></tr>
                         </thead>
                         <tbody>
                         @foreach($datalist as $rs)
@@ -59,8 +59,8 @@
                                         <a href="{{Storage::url($rs->file)}}" target="_blank"><img src="{{asset('assets')}}/admin/images/pdf.png" height="25"></a>
                                     @endif
                                 </td>
-                                <td class="center "><a href="{{route('user_note_edit',['id' => $rs->id])}}"><img src="{{asset('assets')}}/admin/images/editicon.png" height="25"></a></td>
-                                <td class="center "><a href="{{route('user_note_delete',['id' => $rs->id])}}" onclick="return confirm('Are you sure?')"><img src="{{asset('assets')}}/admin/images/deleteicon.png" height="25"></a></td>
+                                <td class="center "><a href="{{route('user_note_edit',['id' => $rs->id])}}"><button class="btn btn-primary btn-xs">Düzenle</button></a></td>
+                                <td class="center "><a href="{{route('user_note_delete',['id' => $rs->id])}}" onclick="return confirm('Are you sure?')"><button class="btn btn-primary btn-xs">Sil</button></a></td>
                             </tr>
                         @endforeach
                         </tbody>

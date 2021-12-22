@@ -31,7 +31,7 @@ Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 
 //Admin
 Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('adminhome')->middleware('auth');
-Route::get('/users',[\App\Http\Controllers\Admin\HomeController::class,'users'])->name('usershome');
+//Route::get('/users',[\App\Http\Controllers\Admin\HomeController::class,'users'])->name('usershome');
 Route::get('/admin/login',[HomeController::class,'login'])->name('adminlogin');
 Route::post('/admin/login',[HomeController::class,'logincheck'])->name('admin_logincheck');
 Route::get('/logout',[HomeController::class,'logout'])->name('admin_logout');
@@ -90,6 +90,20 @@ Route::middleware('auth')->prefix('admin')->group(function () {
             Route::post('update/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'update'])->name('admin_faq_update');
             Route::get('delete/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'destroy'])->name('admin_faq_delete');
             Route::get('show', [\App\Http\Controllers\Admin\FaqController::class, 'show'])->name('admin_faq_show');
+
+        });
+        #user
+        Route::prefix('user')->group(function () {
+            Route::get('/', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin_users');
+            Route::get('create', [\App\Http\Controllers\Admin\UserController::class, 'create'])->name('admin_user_add');
+            Route::post('store', [\App\Http\Controllers\Admin\UserController::class, 'store'])->name('admin_user_store');
+            Route::get('edit/{id}', [\App\Http\Controllers\Admin\UserController::class, 'edit'])->name('admin_user_edit');
+            Route::post('update/{id}', [\App\Http\Controllers\Admin\UserController::class, 'update'])->name('admin_user_update');
+            Route::get('delete/{id}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_user_delete');
+            Route::get('show/{id}', [\App\Http\Controllers\Admin\UserController::class, 'user_roles'])->name('admin_user_show');
+            Route::get('userrole/{id}', [\App\Http\Controllers\Admin\UserController::class, 'user_roles'])->name('admin_user_roles');
+            Route::post('userrolestore/{id}', [\App\Http\Controllers\Admin\UserController::class, 'user_role_store'])->name('admin_user_role_add');
+            Route::get('userroledelete/{userid}/{roleid}', [\App\Http\Controllers\Admin\UserController::class, 'user_role_delete'])->name('admin_user_role_delete');
 
         });
         #setting

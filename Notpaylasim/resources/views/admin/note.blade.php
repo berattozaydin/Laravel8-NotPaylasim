@@ -56,7 +56,7 @@
                                     <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</td>
 
                                     <td>{{$rs ->title}}</td>
-                                    <td>{{$rs->user_id}}</td>
+                                    <td><a href="{{route('admin_user_show',['id'=>$rs->user_id])}}">{{$rs->user->name ?? 'Admin'}}</a></td>
                                     <td>
                                         @if ($rs->image)
                                             <img src="{{Storage::url($rs->image)}}" height="50">

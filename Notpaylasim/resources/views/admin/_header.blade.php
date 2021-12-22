@@ -1,7 +1,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Admin Paneli</span></a>
+                    <a href="{{route('admin_home')}}" class="site_title"><i class="fa fa-paw"></i> <span>Admin Paneli</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -9,7 +9,9 @@
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <div class="profile_pic">
-                        <img src="{{asset('assets')}}/Admin/images/img.jpg" alt="..." class="img-circle profile_img">
+                        @if(Auth::user()->profile_photo_path)
+                        <img src="{{Storage::url(Auth::user()->profile_photo_path)}}" alt="..." class="img-circle profile_img">
+                            @endif
                     </div>
                     <div class="profile_info">
                         <span>Hoşgeldin</span>
@@ -27,7 +29,7 @@
                     <div class="menu_section">
                         <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a href="/admin"><i class="fa fa-home"></i> Anasayfa</a></li>
+                            <li><a href="{{route('admin_home')}}"><i class="fa fa-home"></i> Anasayfa</a></li>
                             <li><a><i class="fa fa-cogs"></i> Site Ayarları <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="{{route('admin_category')}}">Kategori Ayarları</a></li>
@@ -37,7 +39,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="/users"><i class="fa fa-user"></i> Kullanıcılar</a></li>
+                            <li><a href="{{route('admin_users')}}"><i class="fa fa-user"></i> Kullanıcılar</a></li>
                             <li><a href="{{route('admin_message')}}"><i class="fa fa-user"></i>Contact Mesajları</a></li>
                             <li><a href="{{route('admin_review')}}"><i class="fa fa-user"></i>Reviews</a></li>
                             <li><a href="{{route('admin_faq')}}"><i class="fa fa-user"></i>Faqs</a></li>
@@ -80,7 +82,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="{{asset('assets')}}/Admin/images/img.jpg" alt="">
+                                @if(Auth::user()->profile_photo_path)
+                                    <img src="{{Storage::url(Auth::user()->profile_photo_path)}}" alt="..." class="img-circle profile_img">
+                                @endif
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">

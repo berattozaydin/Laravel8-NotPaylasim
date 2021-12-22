@@ -27,7 +27,7 @@
                             <p></p>
                             <p></p>
                             <p></p>
-                            <label>Faculty-Department</label>
+                            <label>Departmanı</label>
                             <select class="form-control" name="category_id">
                                 @foreach($datalist as $rs)
                                     <option value="{{$rs -> id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
@@ -35,23 +35,23 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Lesson</label>
+                            <label>Ders</label>
                             <input type="text" name="title" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Keywords</label>
+                            <label>Anahtar Kelimeler</label>
                             <input type="text" name="keywords" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Description</label>
+                            <label>Tanımlama</label>
                             <input type="text" name="description" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Fotoğraf</label>
                             <input type="file" name="image" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>File</label>
+                            <label>PDF Dosyası</label>
                             <input type="file" name="file" class="form-control">
                         </div>
                         <div class="form-group">
@@ -59,7 +59,7 @@
                             <input type="text" name="slug" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Detail</label>
+                            <label>Detay</label>
                             <textarea id="detail" name="detail"></textarea>
                             <script>
                                 CKEDITOR.replace( 'detail' );
@@ -70,15 +70,15 @@
                             <input type="number" name="user" class="form-control">
                         </div>--}}
                         <div class="form-group">
-                            <label>Status</label>
+                            <label>Durum</label>
                             <select class="form-control" name="status">
-                                <option selected="selected">New</option>
+                                <option selected="selected">Yeni</option>
                             </select>
                         </div>
                     </div><!-- /.box-body -->
 
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Add Note</button>
+                        <button type="submit" class="btn btn-success btn-xs">Not Ekle</button>
                     </div>
                     <p></p>
                     <p></p>
