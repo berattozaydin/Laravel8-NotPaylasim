@@ -39,10 +39,11 @@
                                 </ul>
                             </li>
 
-                            <li><a href="{{route('admin_users')}}"><i class="fa fa-user"></i> Kullanıcılar</a></li>
+                            <li><a href="{{route('admin_users')}}"><i class="fa fa-users"></i> Kullanıcılar</a></li>
                             <li><a href="{{route('admin_message')}}"><i class="fa fa-user"></i>Contact Mesajları</a></li>
                             <li><a href="{{route('admin_review')}}"><i class="fa fa-user"></i>Reviews</a></li>
                             <li><a href="{{route('admin_faq')}}"><i class="fa fa-user"></i>Faqs</a></li>
+
                          <!--   <li><a href="menu.php"><i class="fa fa-list"></i> Menüler</a></li>
                             <li><a href="slider.php"><i class="fa fa-image"></i> Slider</a></li>-->
 
@@ -53,20 +54,7 @@
                 <!-- /sidebar menu -->
 
                 <!-- /menu footer buttons -->
-                <div class="sidebar-footer hidden-small">
-                    <a data-toggle="tooltip" data-placement="top" title="Settings">
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Lock">
-                        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Logout">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                    </a>
-                </div>
+
                 <!-- /menu footer buttons -->
             </div>
         </div>

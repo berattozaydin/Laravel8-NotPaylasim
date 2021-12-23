@@ -11,10 +11,10 @@
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800%7CPoppins:100,200,300i,300,400,700,400i,500%7CDancing+Script:700" rel="stylesheet">
     <!-- animate -->
-    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/css/animate.css" />
     <!-- owl Carousel assets -->
-    <link href="assets/css/owl.carousel.css" rel="stylesheet">
-    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="{{asset('assets')}}/css/owl.carousel.css" rel="stylesheet">
+    <link href="{{asset('assets')}}/css/owl.theme.css" rel="stylesheet">
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap.min.css">
@@ -40,7 +40,7 @@
 
 
 @section('content')
-  içerik alanı
+
   @show
 
 @include('home._footer')

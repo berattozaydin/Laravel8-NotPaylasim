@@ -4,7 +4,7 @@
 
 @endsection
 @section('content')
-
+    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <!-- page content -->
     <div class="right_col" role="main">
         <div class="">
@@ -93,7 +93,7 @@
                                 </div>
                                <h2>Genel Ayar Durum</h2>
                                 <div class="form-group">
-                                    <label>Status</label>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Status<span class="required">*</span></label>
                                    <select style="width: 120px; " class="form-control" name="status">
                                         <option selected="selected">{{$data->status}}</option>
                                         <option>True</option>
@@ -155,24 +155,30 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Hakkımızda <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <textarea name="aboutus" id="" cols="30" rows="10">{!! $data->aboutus !!}</textarea>
-
+                                        <textarea name="aboutus" id="aboutus" cols="30" rows="10">{!! $data->aboutus !!}</textarea>
+                                        <script>
+                                            CKEDITOR.replace( 'aboutus' );
+                                        </script>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">İletişim <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <textarea name="contact" id="" cols="30" rows="10">{!! $data->contact !!}</textarea>
-
+                                        <textarea name="contact" id="contact" cols="30" rows="10">{!! $data->contact !!}</textarea>
+                                        <script>
+                                            CKEDITOR.replace( 'contact' );
+                                        </script>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Referanslar <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <textarea name="references" id="" cols="30" rows="10">{!! $data->references !!}</textarea>
-
+                                        <textarea name="references" id="references" cols="30" rows="10">{!! $data->references !!}</textarea>
+                                        <script>
+                                            CKEDITOR.replace( 'references' );
+                                        </script>
                                     </div>
                                 </div>
                                 <script>

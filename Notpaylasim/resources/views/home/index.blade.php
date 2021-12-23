@@ -16,12 +16,12 @@
                 </div>
                 <div class="margin-top-45px">
                     <div class="row justify-content-center margin-tb-60px">
-                        <div class="col-lg-8">
+                        <div class="col-lg-5">
                             <div class="listing-search">
                                 <form class="row no-gutters" action="{{route('getnotes')}}" method="post">
                                     @csrf
                                   @livewire('search')
-                                    <div class="col-md-4">
+                                    <div class="col-md-5">
                                         <button type="submit">  <a class="listing-bottom background-second-color box-shadow"> Arama Yap</a></button>
                                     </div>
                                 </form>

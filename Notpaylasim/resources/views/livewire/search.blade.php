@@ -1,4 +1,4 @@
-    <div class="col-md-4">
+    <div class="col-md-7">
         <div class="keywords">
 
             <input wire:model="search" name="search" list="mylist" class="listing-form first" type="text" placeholder="Keywords...">

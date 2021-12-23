@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 sm-mb-30px">
-                <div class="logo margin-bottom-10px"><img src="assets/img/logo-1.png" alt=""></div>
+                <div class="logo margin-bottom-10px"><img src="{{asset('assets')}}/img/notpaylasim.png" alt=""></div>
                 <ul class="list-inline text-left margin-tb-20px margin-lr-0px text-white">
                     <li class="list-inline-item"><a class="facebook" href="{{$setting->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
                     <li class="list-inline-item"><a class="twitter" href="{{$setting->twitter}}"><i class="fab fa-twitter"></i></a></li>
@@ -16,8 +16,8 @@
 
             <div class="col-lg-4  col-md-4 sm-mb-30px">
                 <ul class="footer-menu-2 row margin-0px padding-0px list-unstyled">
-                    <li class="col-6  padding-tb-5px"><a href="{{route('home')}}" class="text-grey-2">Home</a></li>
-                    <li class="col-6  padding-tb-5px"><a href="{{route('contactus')}}" class="text-grey-2">Contact Us</a></li>
+                    <li class="col-6  padding-tb-5px"><a href="{{route('home')}}" class="text-grey-2">Anasayfa</a></li>
+                    <li class="col-6  padding-tb-5px"><a href="{{route('contactus')}}" class="text-grey-2">Bize Ulaşın</a></li>
                     <li class="col-6  padding-tb-5px"><a href="{{route('faq')}}" class="text-grey-2">SSS</a></li>
                 </ul>
             </div>
