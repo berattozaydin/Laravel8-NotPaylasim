@@ -12,7 +12,7 @@
             <div class="padding-tb-120px z-index-2 position-relative">
                 <div class="text-center">
                     <h1 class="text-white pull-l icon-large font-weight-500 margin-bottom-40px">Not Paylaşım Sitesi</h1>
-                    <h3 class="text-white icon-large font-weight-100">Notlar</h3>
+                    <h5 class="text-white icon-large font-weight-100">Not Arama</h5>
                 </div>
                 <div class="margin-top-45px">
                     <div class="row justify-content-center margin-tb-60px">
@@ -21,8 +21,8 @@
                                 <form class="row no-gutters" action="{{route('getnotes')}}" method="post">
                                     @csrf
                                   @livewire('search')
-                                    <div class="col-md-5">
-                                        <button type="submit">  <a class="listing-bottom background-second-color box-shadow"> Arama Yap</a></button>
+                                    <div class="col-md-5 float-right">
+                                           <button type="submit" class="listing-bottom background-second-color box-shadow">Arama Yap</button>
                                     </div>
                                 </form>
                                 @livewireScripts
@@ -33,7 +33,7 @@
             </div>
         </div>
         <!-- //container  -->
-        <video class="background-grey-3" autoplay loop id="video-background" muted plays-inline><source src="#video-url" type="video/mp4"></video>
+       <video class="background-grey-3" autoplay loop id="video-background" muted plays-inline><source src="#video-url" type="video/mp4"></video>
 
     </div>
 
