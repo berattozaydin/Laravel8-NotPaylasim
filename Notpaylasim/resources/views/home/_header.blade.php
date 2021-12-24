@@ -44,9 +44,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                                 <li><a href="{{route('aboutus')}}">Hakkımızda</a> </li>
                                 <li><a href="{{route('references')}}">Referanslar</a> </li>
                                 <li><a href="{{route('faq')}}">SSS</a> </li>
-                                @guest
-                                <a href="{{route('register')}}" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="fa fa-user"></i>Kayıt Ol</a>
-                                @endguest
+
                             </ul>
                         </div>
                         @auth
@@ -56,10 +54,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                             <hr class=" d-block d-sm-none mt-1.5">
                             <a href="{{route('myprofile')}}" class="text-white box-shadow text-extra-large"><i class="far fa-user"></i>{{Auth::user()->name}}</a>
                             <ul class="list-unstyled">
-
                                 <li><a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Çıkış Yap</a></li>
-
-
                             </ul>
                             </div>
                         </div>
@@ -67,9 +62,10 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                         @guest
                             <div class="col-lg-2 col-md-12 d-none d-lg-block">
                                 <hr class="margin-bottom-0px d-block d-sm-none">
-                                <a href="{{route('login')}}" class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large"><i class="far fa-user"></i>Giriş Yap</a>
+                                <div class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-23px text-extra-large">
+                                <a href="{{route('login')}}" ><i class="far fa-user"></i>Giriş Yap </a><a href="{{route('register')}}"><i class="far fa-user"></i> Kayıt Ol</a>
+                                </div>
                             </div>
-
                         @endguest
 
                     </div>

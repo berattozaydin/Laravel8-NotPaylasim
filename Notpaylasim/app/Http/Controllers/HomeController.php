@@ -64,9 +64,10 @@ class HomeController extends Controller
         $data=Notes::find($id);
         $datalist=Image::where('note_id',$id)->get();
         $reviews = \App\Models\Review::where('note_id',$id)->get();
+//        print_r($reviews);
+//        exit();
         return view('home.notes_detail',['data'=>$data,'datalist'=>$datalist,'reviews' =>$reviews]);
-        //print_r($data);
-       // exit();
+
     }
     public function categorynotess($id){
        $datalist=Notes::where('category_id',$id)->get();

@@ -20,15 +20,7 @@
                         <a href="{{route('note',['id' => $rs->id])}}"><img class="width-250px" src="{{Storage::url($rs->image)}}" ></a></a>
                     </div>
                     <div class="padding-25px">
-                        <div class="rating">
-                            <ul>
-                                <li class="active"></li>
-                                <li class="active"></li>
-                                <li class="active"></li>
-                                <li class="active"></li>
-                                <li></li>
-                            </ul>
-                        </div>
+
                         <h3><a href="#" class="d-block text-dark text-capitalize text-medium margin-tb-15px">{{$rs->title}}</a></h3>
                         <hr>
                         <div class="row no-gutters">

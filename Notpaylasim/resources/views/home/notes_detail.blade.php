@@ -9,10 +9,11 @@
 
     <div id="page-title" class="padding-tb-30px gradient-white">
         <div class="container text-left">
-            <ol class="breadcrumb opacity-5">
-                <li><a href="{{route('home')}}">Home</a></li>
-                <li class="active">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data->category,$data->category->title)}}</li>
-            </ol>
+
+                <!--<li><a href="{{route('home')}}">Home</a></li>-->
+                <h1>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data->category,$data->category->title)}}</h1>
+
+
             <h1 class="font-weight-300">{{$data->title}}</h1>
         </div>
     </div>

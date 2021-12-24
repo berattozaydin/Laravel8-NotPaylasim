@@ -73,6 +73,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
             Route::get('show', [\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
 
         });
+
         #Review
         Route::prefix('review')->group(function () {
             Route::get('/', [\App\Http\Controllers\Admin\ReviewController::class, 'index'])->name('admin_review');
@@ -80,6 +81,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
             Route::get('delete/{id}', [\App\Http\Controllers\Admin\ReviewController::class, 'destroy'])->name('admin_review_delete');
             Route::get('show/{id}', [\App\Http\Controllers\Admin\ReviewController::class, 'show'])->name('admin_review_show');
         });
+
         #Faqs
         Route::prefix('faq')->group(function () {
 
@@ -92,6 +94,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
             Route::get('show', [\App\Http\Controllers\Admin\FaqController::class, 'show'])->name('admin_faq_show');
 
         });
+
         #user
         Route::prefix('user')->group(function () {
             Route::get('/', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin_users');
