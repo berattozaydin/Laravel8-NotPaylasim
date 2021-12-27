@@ -7,7 +7,6 @@
     <div id="page-title" class="padding-tb-30px gradient-white">
         <div class="container text-left">
             <ol class="breadcrumb opacity-5">
-                <li><a href="{{route('home')}}">Home</a></li>
                 <li class="active"></li>
             </ol>
             <h1 class="font-weight-300"></h1>

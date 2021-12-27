@@ -1,4 +1,5 @@
 @extends('layouts.home')
+@section('title','Not Paylasim')
 @section('content')
     @php
         $setting = \App\Http\Controllers\HomeController::getsetting()
@@ -57,8 +58,8 @@
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputName">Full Name</label>
-                                <input type="text" class="form-control" id="inputName" name="name" placeholder="Name & Surname">
+                                <label for="inputName">Ad Soyad</label>
+                                <input type="text" class="form-control" id="inputName" name="name" placeholder="Ad Soyad">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email</label>
@@ -66,14 +67,17 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputAddress">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St">
+                            <label for="inputAddress">Adres</label>
+                            <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Adres">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Message</label>
+                            <label for="exampleFormControlTextarea1">Mesajınız</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
+                            <script>
+                                CKEDITOR.replace( 'message' );
+                            </script>
                         </div>
-                       <button type="submit"><a class="btn-sm btn-lg btn-block background-main-color text-white text-center font-weight-bold text-uppercase rounded-0 padding-15px">Send</a></button>
+                       <button type="submit" class="btn-sm btn-lg btn-block background-main-color text-white text-center font-weight-bold text-uppercase rounded-0 padding-15px">Gönder</button>
                     </form>
                 </div>
                 <div class="col-lg-6 col-md-6">

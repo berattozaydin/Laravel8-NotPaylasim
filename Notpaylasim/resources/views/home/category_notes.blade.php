@@ -21,10 +21,10 @@
                     </div>
                     <div class="padding-25px">
 
-                        <h3><a href="#" class="d-block text-dark text-capitalize text-medium margin-tb-15px">{{$rs->title}}</a></h3>
+                        <h3><a href="{{route('note',['id' => $rs->id])}}" class="d-block text-dark text-capitalize text-medium margin-tb-15px">{{$rs->title}}</a></h3>
                         <hr>
                         <div class="row no-gutters">
-                            <div class="col-4 text-left"><a href="#" class="text-red"><i class="far fa-heart"></i>{{$rs->keywords}}</a></div>
+                            <div class="col-4 text-left"><a href="{{route('note',['id' => $rs->id])}}" class="text-red"><i class="far fa-heart"></i>{{$rs->keywords}}</a></div>
                             <div class="col-8 text-right"><a href="#" class="text-grey-2"><i class="fas fa-users"></i></a></div>
                         </div>
                     </div>

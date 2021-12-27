@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title','title')
+@section('title',Auth::user()->name)
 @section('description')  @endsection
 @section('keywords','keywords')
 @section('content')

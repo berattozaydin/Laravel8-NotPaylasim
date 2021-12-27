@@ -9,7 +9,7 @@
     <div id="page-title" class="padding-tb-30px gradient-white">
         <div class="container">
             <ol class="breadcrumb opacity-5">
-                <li><a href="{{route('home')}}">Home</a></li>
+
             </ol>
             <h1 class="font-weight-300">Sıkça Sorulan Sorular</h1>
         </div>

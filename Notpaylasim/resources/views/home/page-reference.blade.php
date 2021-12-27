@@ -10,7 +10,7 @@
     <div class="container">
         <ol class="breadcrumb opacity-5">
         </ol>
-        <h1 class="font-weight-300">References</h1>
+        <h1 class="font-weight-300">Referanslar</h1>
     </div>
 </div>
 
